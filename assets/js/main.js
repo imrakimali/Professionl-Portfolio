@@ -221,16 +221,29 @@
   /**
    * Preloader
    */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
-
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const preloader = document.querySelector('#preloader');
+  
+    if (preloader) {
+      // Listen for the window load event to ensure all resources are loaded
+      window.addEventListener('load', () => {
+        // Use a fade-out effect before removing the preloader
+        preloader.style.transition = 'opacity 0.3s ease-out';
+        preloader.style.opacity = '0';
+  
+        // Remove the preloader after the fade-out effect
+        setTimeout(() => {
+          preloader.remove();
+        }, 300); // Match the timeout duration with the transition duration
+      });
+    }
+  
+    /**
+     * Initiate Pure Counter 
+     */
+    if (typeof PureCounter !== 'undefined') {
+      new PureCounter();
+    }
+  });
+  
 })()

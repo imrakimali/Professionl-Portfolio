@@ -363,6 +363,7 @@ a:hover {
 }
 
 /*------/ Prelaoder /------*/
+/* Container for the preloader */
 #preloader {
   position: fixed;
   top: 0;
@@ -371,31 +372,42 @@ a:hover {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #fff;
+  background: #fff; /* Adjust background color as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-out; /* Smooth transition for fade-out effect */
 }
 
+/* Example animation for the preloader */
 #preloader:before {
   content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #f2f2f2;
-  border-top: 6px solid #0078ff;
-  border-radius: 50%;
+  position: relative;
   width: 60px;
   height: 60px;
-  animation: animate-preloader 1s linear infinite;
+  border: 6px solid #f2f2f2;
+  border-top: 6px solid #ff5e00;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
 }
 
-@keyframes animate-preloader {
+/* Keyframes for rotating animation */
+@keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
 }
+
+/* Hide preloader after fade-out */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
 
 /*------/ Button /------*/
 .button {
@@ -1465,3 +1477,11 @@ footer .credits {
 footer .credits a {
   color: #fff;
 }
+
+
+/* ====================== */
+/* custom added */
+.header{
+  background-color: #000006;
+}
+/* custom added */
