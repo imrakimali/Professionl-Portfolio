@@ -461,7 +461,7 @@ a:hover {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+/* #header {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
@@ -486,7 +486,44 @@ a:hover {
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.9);
   padding: 12px 0;
+} */
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+  position: fixed;  /* Make the header fixed */
+  top: 0;           /* Align it to the top */
+  left: 0;          /* Ensure it covers the full width */
+  width: 100%;      /* Make the header full width */
+  background: rgb(0, 0, 0); /* Optional: adjust the background if necessary */
 }
+
+#header .logo {
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#header .logo a {
+  color: #fff;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+#header.header-scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 12px 0;
+}
+
+/* Adjust body content so that it doesn't overlap with the fixed header */
+body {
+  padding-top: 80px; /* Adjust based on your header's height */
+}
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -496,6 +533,7 @@ a:hover {
 */
 .navbar {
   padding: 0;
+
 }
 
 .navbar ul {
@@ -513,6 +551,7 @@ a:hover {
 .navbar > ul > li {
   white-space: nowrap;
   padding: 10px 0 10px 30px;
+  
 }
 
 .navbar a,
