@@ -1005,78 +1005,82 @@ a:hover {
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
-.portfolio-details {
-  padding-top: 40px;
+.portfolio-mf {
+  background-color: #f9f9f9;
+  padding: 60px 0;
 }
 
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
+.title-a {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #212529;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #0078ff;
-}
-
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet-active {
-  background-color: #0078ff;
-}
-
-.portfolio-details .portfolio-info {
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(78, 78, 78, 0.08);
-}
-
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li + li {
+.subtitle-a {
+  font-size: 1.2rem;
+  color: #6c757d;
   margin-top: 10px;
 }
 
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-.portfolio-details .portfolio-description p {
-  padding: 0;
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.project-info {
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
-.testimonial-box {
+/* .testimonial-box {
   color: #fff;
   text-align: center;
 }
@@ -1142,7 +1146,75 @@ a:hover {
 
 .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #fff;
+} */
+
+.testimonials-section {
+  background-color: #f8f9fc;
+  padding: 60px 0;
 }
+
+.testimonial-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+.testimonial-box .quote {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.testimonial-box .quote i {
+  font-size: 24px;
+}
+
+.stars {
+  color: #ffc107; /* Gold color for stars */
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.profile {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile h5 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.profile .position {
+  font-size: 14px;
+  color: #777777;
+}
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #777777;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 
 /*--------------------------------------------------------------
 # Contact
